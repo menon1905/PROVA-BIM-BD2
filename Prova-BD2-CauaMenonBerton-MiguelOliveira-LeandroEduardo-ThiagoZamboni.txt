@@ -1,0 +1,58 @@
+1) 	CREATE TABLE movies(id PRIMARY KEY UNIQUE NOT NULL, 
+			movies_path VARCHAR(45) NOT NULL,
+ 			title VARCHAR(45) NOT NULL,
+			duration TIMESTAMP NOT NULL,
+			date_lounge CHAR(4) NOT NULL,
+			manin_actors VARCHAR(45) NOT NULL,
+			director VARCHAR (45) NOT NULL,
+			posters BYTEA NOTNULL,
+			genres VARCHAR(45));
+
+2) 	CREATE TABLE users( id UUID PRIMARY KEY UNIQUE NOT NULL,
+			email VARCHAR(45) NOT NULL UNIQUE,
+			password VARCHAR(45) NOT NULL,
+			full_name VARCHAR(128)NOT NULL, 
+			age VARCHAR(3) NOT NULL,
+			favorite_genders VARCHAR(50) NOT NULL,
+			creation_date TIMESTAMP NOT NULL,
+			last_acess TIMESTAMP NOT NULL,
+			phone VARCHAR(20) NOT NULL,
+			streaming_plan VARCHAR(45) NOT NULL);
+
+3) 	CREATE TABLE info_plans( id UUID PRIMARY KEY UNIQUE NOT NULL, 
+			plan_name VARCHAR(45) NOT NULL,
+			price MONEY NOT NULL,
+			recurrence  VARCHAR(45),
+			plan_desc VARCHAR(45),
+			description_plan TEXT NOT NULL,
+			quantity_devices INTEGER NOT NULL);
+	
+4) 	TABLE movies REFERENCES users;
+	TABLE users REFERENCES info_plans;
+
+
+	
+5) 
+	INSERT INTO movies(movies) VALUES ('Meu malvado favorito');
+	INSERT INTO movies(movies) VALUES ('Mininons 2');
+	INSERT INTO movies(movies) VALUES ('Minions 3');
+	
+
+   	INSERT INTO movies(manin_actors) VALUES ('Leandro Hassum');
+   	INSERT INTO movies(manin_actors) VALUES ('Adam Sandler');
+   	INSERT INTO movies(manin_actors) VALUES ('Tom Holland');
+   	INSERT INTO movies(manin_actors) VALUES ('Caio Castro');
+
+	INSERT INTO movies(director) VALUES ('Adam Sandler');
+
+	INSERT INTO users(full_name) VALUES ('Caua Menon Berton');
+	INSERT INTO users(full_name) VALUES ('Miguel Oliveira Santana');
+
+	INSERT INTO info_plans(plan_name) VALUES ('Month Plans');
+	INSERT INTO info_plans(plan_name) VALUES ('Year Plans');
+	INSERT INTO info_plans(plan_name) VALUES ('Quarterly Plans');
+	
+	
+			
+
+			
